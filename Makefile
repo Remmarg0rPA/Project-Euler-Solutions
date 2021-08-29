@@ -6,16 +6,15 @@ make:
 	@if [ $(FILE) != 0 ]; then\
 		$(GHC) --make $(FILE);\
 	else \
-		echo "You must specify a file name in the variable 'FILE' ";\
+		echo "You must specify a file name in the 'FILE' variable";\
 	fi
 
 make-run:
 	@if [ $(FILE) != 0 ]; then\
-		$(GHC) --make $(FILE) -o $(OUT);\
+		$(GHC) --make $(FILE) -o $(OUT) && ./$(OUT);\
 	else \
-		echo "You must specify a file name in the variable 'FILE' ";\
-	fi; \
-	./$(OUT)
+		echo "You must specify a file name in the 'FILE' variable";\
+	fi
 
 clean:
-	rm -fv *hi *.o *.out
+	rm -fv *hi *.o a.out
